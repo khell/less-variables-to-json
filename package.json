@@ -1,6 +1,6 @@
 {
   "name": "less-variables-to-json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/index.js",
   "author": "Cameron Yan (Khell)",
   "repository": "https://github.com/khell/less-variables-to-json",
@@ -8,8 +8,10 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
-    "less": "^2.7.2",
     "mocha": "^3.3.0"
+  },
+  "dependencies": {
+    "less": "^2.7.2"
   },
   "scripts": {
     "test": "mocha"
