@@ -4,8 +4,8 @@ const defaultOptions = {
     nameProjectionFunc: null
 };
 
-module.exports = (str = '', options = defaultOptions) => {
-    Object.assign({}, defaultOptions, options);
+module.exports = (str = '', options) => {
+    options = Object.assign({}, defaultOptions, options);
     return new Promise((resolve, reject) => {
         less.parse(str, options.config, (err, root, imports, lessOpts) => {
             if (err)
