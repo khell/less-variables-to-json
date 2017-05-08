@@ -14,14 +14,14 @@ let json;
 
 // Standard usage
 lessVariablesToJson("@primary-color: red;").then((result) => {
-    json = result;
-});  // json = { "@primary-color": "red" }
+    json = result;  // json = { "@primary-color": "red" }
+});
 
 // With a projection function to change the name
-let nameProjectionFunc = (name) => name.substr(1));
+let nameProjectionFunc = (name) => name.substr(1);
 lessVariablesToJson("@primary-color: red;", { nameProjectionFunc }).then((result) => {
-    json = result;
-};  // json = { "primary-color": "red" }
+    json = result;  // json = { "primary-color": "red" }
+};
 ```
 
 ## License
