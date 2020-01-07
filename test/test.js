@@ -43,12 +43,17 @@ describe('less-variables-to-json', function() {
     });
 
     it('should return JSON with only valid LESS transformed and invalid LESS stripped', function() {
-        let lessStr = "@myvar???:xsas 1234 @mycolor.#fff; @validvar: 60;";
+        let lessStr = "@myvar???:xsas 1234 mycolor.#fff; @validvar: 60;";
         let expectedJSON = {
             "@validvar": "60"
         };
 
         return lessVariablesToJson(lessStr).should.eventually.deep.equal(expectedJSON);
+    });
+    
+    it('should error if given undefined variable', function() {
+        let lessStr = "@myvar: 1234; .myclass { color: @mycolor }";
+        return lessVariablesToJson(lessStr).should.eventually.be.rejected;
     });
 
     it('should error if given malformed LESS with no terminating semicolon', function() {
